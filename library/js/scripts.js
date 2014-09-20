@@ -64,7 +64,6 @@ jQuery(document).ready(function($) {
 		init: function() {
 			if(globalHelper.elementExists(this.settings.required_element)) {
 				this.bindUIActions();
-				this.matchLinkHeights();
 				// TODO - GIVE ME SOME COMMENTS ...
 				this.settings.sidebar_offset = this.settings.sidebar.offset().top;
 				this.settings.sidebar_margin_default = parseInt(this.settings.sidebar.css('marginTop'));
@@ -121,30 +120,22 @@ jQuery(document).ready(function($) {
 
 
 
+	// ===== WINDOW ONLOAD
+	// ================================================================================
 
-	/*
-	// TODO - NEEDS WORK.  NEEDS TO BE INTEGRATED WITH MY STYLE OF WRITING
-	$(function() {
+	$(window).load(function() {
 
-		var $sidebar   = $('.pg-design-single .col-sidebar'),
-			$window    = $(window),
-			offset     = $sidebar.offset(),
-			topPadding = 15;
-
-		$window.scroll(function() {
-			if ($window.scrollTop() > offset.top) {
-				$sidebar.stop().animate({
-					marginTop: $window.scrollTop() - offset.top + topPadding
-				});
-			} else {
-				$sidebar.stop().animate({
-					marginTop: 0
-				});
-			}
-		});
+		// Modify each design comp link on single project pages so that each link has the same height.
+		if(globalHelper.elementExists(singleProject.settings.required_element)) {
+			singleProject.matchLinkHeights();
+		}
 
 	});
-*/
+
+
+
+
+
 
 
 
