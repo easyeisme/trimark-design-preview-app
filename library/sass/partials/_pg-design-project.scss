@@ -1,0 +1,135 @@
+
+// ===== DESIGN PROJECT
+// ================================================================================
+
+.pg-design-single {
+
+	// Column Layout
+	.col-body {
+		float: right;
+		width: 665px;
+	}
+	.col-sidebar {
+		float: left;
+		margin-top: 15px;
+		width: 280px;
+		.section {
+			margin-top: 0;
+		}
+	}
+
+	// Project Details
+	.project-title {
+		font-family: $font-titillium-semibold;
+	}
+	.project-description {
+		margin-top: 20px;
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	// Design Sets
+	.design-set-title {
+		border-bottom: solid darken($color-gray-lite, 2%) 1px;
+		color: lighten($color-navy, 15%);
+		font-family: $font-titillium-regular;
+		margin-top: 0;
+		padding-bottom: 5px;
+	}
+	.design-set-updated {
+		color: lighten($color-gray, 30%);
+		float: right;
+		font-size: 11px;
+		line-height: 1;
+		margin: 14px 3px 0 20px;
+		text-transform: uppercase;
+		.date {
+			display: inline-block;
+			margin-left: 4px;
+		}
+	}
+	.design-set-comps {
+		margin-top: 10px;
+		li {
+			float: left;
+			width: 25%;
+			&:nth-of-type(5n) {
+				clear: left;
+			}
+		}
+		a {
+			border: solid #FFFFFF 1px;
+			border-radius: 4px;
+			display: block;
+			padding: 14px;
+			text-decoration: none;
+			&:hover {
+				background: lighten($color-gray-lite, 2%);
+				border-color: darken($color-gray-lite, 1%);
+				color: lighten($color-navy, 30%);
+			}
+		}
+		img {
+			display: block;
+			max-width: 100%;
+		}
+		.design-comp-title {
+			font-size: 12px;
+			line-height: 1.25;
+			padding: 8px 5px 10px 5px;
+			text-align: center;
+		}
+	}
+
+	// Sidebar
+	.sidebar-block {
+		li {
+			line-height: 1.25;
+			margin: 5px 0;
+			padding-left: 10px;
+		}
+	}
+	.sidebar-block-title {
+		color: $color-gray-dark;
+		font: normal 18px/1 $font-titillium-semibold;
+		margin-bottom: 8px;
+	}
+	// Sidebar - Project Team
+	.sidebar-block-team {
+		border-bottom: solid darken($color-gray-lite, 2%) 1px;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+	}
+	.team-member-name {
+		font-weight: bold;
+	}
+	.team-member-role {
+		color: lighten($color-gray, 30%);
+		font-size: 11px;
+		text-transform: uppercase;
+	}
+	// Sidebar - Quick Links
+	.sidebar-block-links {
+		color: lighten($color-gray, 15%);
+		li {
+			padding-left: 0;
+		}
+		a {
+			@include transition(all 0.1s linear);
+			background: lighten($color-gray-lite, 1%);
+			border-radius: 3px;
+			color: inherit;
+			display: block;
+			padding: 5px 10px;
+			text-decoration: none;
+			&:hover {
+				background: darken($color-gray-lite, 5%);
+				color: $color-gray;
+			}
+		}
+	}
+
+}
+
+

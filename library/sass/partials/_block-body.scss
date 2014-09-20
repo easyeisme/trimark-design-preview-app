@@ -1,0 +1,18 @@
+
+// ===== BODY
+// ================================================================================
+
+.body-main {
+	padding-bottom: 40px;
+	.page-wrapper {
+		min-height: 500px;
+	}
+}
+
+.section {
+	background: #FFFFFF;
+	border: solid darken($color-gray-lite, 3%) 1px;
+	box-shadow: 2px 2px 1px darken($color-gray-lite, 2%);
+	margin: 15px 0;
+	padding: 20px;
+}

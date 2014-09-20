@@ -1,0 +1,947 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/font-awesome/fontawesome-webfont.eot?v=4.2.0");
+  src: url("../fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.2.0") format("embedded-opentype"), url("../fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0") format("woff"), url("../fonts/font-awesome/fontawesome-webfont.ttf?v=4.2.0") format("truetype"), url("../fonts/font-awesome/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'titillium-thin';
+  src: url("../fonts/titillium/titillium-thin-webfont.eot");
+  src: url("../fonts/titillium/titillium-thin-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/titillium/titillium-thin-webfont.woff2") format("woff2"), url("../fonts/titillium/titillium-thin-webfont.woff") format("woff"), url("../fonts/titillium/titillium-thin-webfont.ttf") format("truetype"), url("../fonts/titillium/titillium-thin-webfont.svg#titilliumthin") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'titillium-light';
+  src: url("../fonts/titillium/titillium-light-webfont.eot");
+  src: url("../fonts/titillium/titillium-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/titillium/titillium-light-webfont.woff2") format("woff2"), url("../fonts/titillium/titillium-light-webfont.woff") format("woff"), url("../fonts/titillium/titillium-light-webfont.ttf") format("truetype"), url("../fonts/titillium/titillium-light-webfont.svg#titilliumlight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'titillium-regular';
+  src: url("../fonts/titillium/titillium-regular-webfont.eot");
+  src: url("../fonts/titillium/titillium-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/titillium/titillium-regular-webfont.woff2") format("woff2"), url("../fonts/titillium/titillium-regular-webfont.woff") format("woff"), url("../fonts/titillium/titillium-regular-webfont.ttf") format("truetype"), url("../fonts/titillium/titillium-regular-webfont.svg#titilliumregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'titillium-semibold';
+  src: url("../fonts/titillium/titillium-semibold-webfont.eot");
+  src: url("../fonts/titillium/titillium-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/titillium/titillium-semibold-webfont.woff2") format("woff2"), url("../fonts/titillium/titillium-semibold-webfont.woff") format("woff"), url("../fonts/titillium/titillium-semibold-webfont.ttf") format("truetype"), url("../fonts/titillium/titillium-semibold-webfont.svg#titilliumbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'titillium-bold';
+  src: url("../fonts/titillium/titillium-bold-webfont.eot");
+  src: url("../fonts/titillium/titillium-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/titillium/titillium-bold-webfont.woff2") format("woff2"), url("../fonts/titillium/titillium-bold-webfont.woff") format("woff"), url("../fonts/titillium/titillium-bold-webfont.ttf") format("truetype"), url("../fonts/titillium/titillium-bold-webfont.svg#titillium_bdbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 9, ../sass/base/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 19, ../sass/base/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+/* line 43, ../sass/base/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 55, ../sass/base/_normalize.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 65, ../sass/base/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+/* line 76, ../sass/base/_normalize.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 87, ../sass/base/_normalize.scss */
+a {
+  background: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 96, ../sass/base/_normalize.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+/* line 107, ../sass/base/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+/* line 116, ../sass/base/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+/* line 124, ../sass/base/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+/* line 133, ../sass/base/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 142, ../sass/base/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 151, ../sass/base/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 160, ../sass/base/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 167, ../sass/base/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 171, ../sass/base/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+/* line 182, ../sass/base/_normalize.scss */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+/* line 190, ../sass/base/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+/* line 201, ../sass/base/_normalize.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 209, ../sass/base/_normalize.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 219, ../sass/base/_normalize.scss */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 230, ../sass/base/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+/* line 254, ../sass/base/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+/* line 264, ../sass/base/_normalize.scss */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 276, ../sass/base/_normalize.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 291, ../sass/base/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 301, ../sass/base/_normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 310, ../sass/base/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 320, ../sass/base/_normalize.scss */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 333, ../sass/base/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 345, ../sass/base/_normalize.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  height: auto;
+  margin: 0;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 357, ../sass/base/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 371, ../sass/base/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 379, ../sass/base/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 390, ../sass/base/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+/* line 399, ../sass/base/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 408, ../sass/base/_normalize.scss */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 419, ../sass/base/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 425, ../sass/base/_normalize.scss */
+td,
+th {
+  padding: 0;
+}
+
+/* line 7, ../sass/partials/_base.scss */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 12, ../sass/partials/_base.scss */
+html {
+  font-size: 14px;
+}
+
+/* line 15, ../sass/partials/_base.scss */
+body {
+  background: #eeeff3;
+  color: #51504c;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 29, ../sass/partials/_base.scss */
+a {
+  color: #51504c;
+  cursor: pointer;
+}
+/* line 32, ../sass/partials/_base.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 43, ../sass/partials/_base.scss */
+h1, h2,
+.h1, .h2 {
+  font-family: "titillium-light", sans-serif;
+  font-weight: normal;
+  line-height: 1;
+  margin: 20px 0;
+}
+
+/* line 49, ../sass/partials/_base.scss */
+h1, .h1 {
+  color: #172768;
+  font-size: 40px;
+}
+
+/* line 53, ../sass/partials/_base.scss */
+h2, .h2 {
+  font-size: 24px;
+}
+
+/* line 62, ../sass/partials/_base.scss */
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 67, ../sass/partials/_base.scss */
+.ul li {
+  padding-left: 35px;
+  position: relative;
+}
+/* line 70, ../sass/partials/_base.scss */
+.ul li:before {
+  content: "\2022";
+  display: inline-block;
+  left: 15px;
+  position: absolute;
+}
+
+/* line 83, ../sass/partials/_base.scss */
+.no-margin {
+  margin: 0;
+}
+
+/* line 85, ../sass/partials/_base.scss */
+.fa, .header-back-btn i:before {
+  display: inline-block;
+  font: normal normal normal 14px/1 "FontAwesome", sans-serif;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 99, ../sass/partials/_base.scss */
+.clear {
+  clear: both;
+}
+
+/* line 103, ../sass/partials/_base.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+/* line 107, ../sass/partials/_base.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 116, ../sass/partials/_base.scss */
+.sprite-main {
+  background-image: url("../img/sprite-main.png");
+  background-repeat: no-repeat;
+}
+
+/* line 126, ../sass/partials/_base.scss */
+.page-wrapper {
+  margin: 0 auto;
+  width: 960px;
+}
+
+/* line 5, ../sass/partials/_block-header.scss */
+.header-main {
+  background: #172768;
+  color: #FFFFFF;
+}
+/* line 8, ../sass/partials/_block-header.scss */
+.header-main .page-wrapper {
+  min-height: 55px;
+  position: relative;
+}
+
+/* line 15, ../sass/partials/_block-header.scss */
+.header-logo {
+  border: solid #515d8d 2px;
+  border-radius: 50%;
+  height: 42px;
+  left: 50%;
+  margin: -22px 0 0 -21px;
+  padding: 2px;
+  position: absolute;
+  top: 50%;
+  width: 42px;
+}
+/* line 25, ../sass/partials/_block-header.scss */
+.header-logo .circle {
+  background: #515d8d;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+/* line 31, ../sass/partials/_block-header.scss */
+.header-logo .triangle {
+  border-color: transparent transparent transparent #172768;
+  border-style: solid;
+  border-width: 6px 0 6px 10.392px;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+/* line 42, ../sass/partials/_block-header.scss */
+.header-logo .triangle-top {
+  left: 11px;
+  top: 6px;
+}
+/* line 46, ../sass/partials/_block-header.scss */
+.header-logo .triangle-right {
+  left: 23px;
+  top: 13px;
+}
+/* line 50, ../sass/partials/_block-header.scss */
+.header-logo .triangle-bottom {
+  left: 11px;
+  top: 20px;
+}
+
+/* line 57, ../sass/partials/_block-header.scss */
+.header-back-btn {
+  -webkit-transition: color 0.1s linear;
+  -moz-transition: color 0.1s linear;
+  color: #8b93b3;
+  display: block;
+  font-size: 12px;
+  height: 40px;
+  left: 0;
+  line-height: 40px;
+  margin-top: -20px;
+  position: absolute;
+  text-decoration: none;
+  text-transform: uppercase;
+  top: 50%;
+}
+/* line 70, ../sass/partials/_block-header.scss */
+.header-back-btn i {
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+}
+/* line 74, ../sass/partials/_block-header.scss */
+.header-back-btn i:before {
+  content: "\f053";
+  font-size: 20px;
+  line-height: 40px;
+}
+/* line 81, ../sass/partials/_block-header.scss */
+.header-back-btn:hover {
+  color: #FFFFFF;
+}
+
+/* line 87, ../sass/partials/_block-header.scss */
+.header-comp-grid-btn {
+  display: none;
+}
+
+/* line 92, ../sass/partials/_block-header.scss */
+.header-comp-info {
+  float: right;
+  line-height: 1;
+  padding: 10px 0 5px 0;
+  text-align: right;
+  width: 440px;
+}
+/* line 98, ../sass/partials/_block-header.scss */
+.header-comp-info .client-design {
+  color: #8b93b3;
+  font-size: 11px;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+/* line 104, ../sass/partials/_block-header.scss */
+.header-comp-info .comp {
+  font-family: "titillium-regular", sans-serif;
+  font-size: 18px;
+}
+
+/* line 5, ../sass/partials/_block-body.scss */
+.body-main {
+  padding-bottom: 40px;
+}
+/* line 7, ../sass/partials/_block-body.scss */
+.body-main .page-wrapper {
+  min-height: 500px;
+}
+
+/* line 12, ../sass/partials/_block-body.scss */
+.section {
+  background: #FFFFFF;
+  border: solid #e5e7ed 1px;
+  box-shadow: 2px 2px 1px #e8e9ef;
+  margin: 15px 0;
+  padding: 20px;
+}
+
+/* line 8, ../sass/partials/_pg-design-archives.scss */
+.pg-design-archive .project-link {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  color: #172768;
+  display: block;
+  padding: 16px 20px;
+  position: relative;
+  text-decoration: none;
+}
+/* line 15, ../sass/partials/_pg-design-archives.scss */
+.pg-design-archive .project-link:before {
+  -webkit-transition: width 0.1s ease-in-out;
+  -moz-transition: width 0.1s ease-in-out;
+  background: #4360d5;
+  bottom: -1px;
+  content: " ";
+  display: block;
+  left: -1px;
+  position: absolute;
+  top: -1px;
+  width: 0;
+}
+/* line 26, ../sass/partials/_pg-design-archives.scss */
+.pg-design-archive .project-link:hover {
+  border-color: #c1c5d3;
+  box-shadow: 2px 2px 1px #d6d8e2;
+  color: #4360d5;
+}
+/* line 31, ../sass/partials/_pg-design-archives.scss */
+.pg-design-archive .project-link:hover:before {
+  width: 4px;
+}
+/* line 37, ../sass/partials/_pg-design-archives.scss */
+.pg-design-archive .project-title {
+  color: inherit;
+  font-family: "titillium-semibold", sans-serif;
+  font-size: 20px;
+}
+/* line 44, ../sass/partials/_pg-design-archives.scss */
+.pg-design-archive .project-meta {
+  color: #9e9d98;
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+/* line 51, ../sass/partials/_pg-design-archives.scss */
+.pg-design-archive .project-meta .last-updated .date {
+  font-size: 12px;
+  text-transform: none;
+}
+/* line 55, ../sass/partials/_pg-design-archives.scss */
+.pg-design-archive .project-meta .last-updated .ago {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* line 8, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .col-body {
+  float: right;
+  width: 665px;
+}
+/* line 12, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .col-sidebar {
+  float: left;
+  margin-top: 15px;
+  width: 280px;
+}
+/* line 16, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .col-sidebar .section {
+  margin-top: 0;
+}
+/* line 22, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .project-title {
+  font-family: "titillium-semibold", sans-serif;
+}
+/* line 25, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .project-description {
+  margin-top: 20px;
+}
+/* line 27, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .project-description p {
+  margin-bottom: 0;
+}
+/* line 33, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .design-set-title {
+  border-bottom: solid #e8e9ef 1px;
+  color: #253ea7;
+  font-family: "titillium-regular", sans-serif;
+  margin-top: 0;
+  padding-bottom: 5px;
+}
+/* line 40, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .design-set-updated {
+  color: #9e9d98;
+  float: right;
+  font-size: 11px;
+  line-height: 1;
+  margin: 14px 3px 0 20px;
+  text-transform: uppercase;
+}
+/* line 47, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .design-set-updated .date {
+  display: inline-block;
+  margin-left: 4px;
+}
+/* line 52, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .design-set-comps {
+  margin-top: 10px;
+}
+/* line 54, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .design-set-comps li {
+  float: left;
+  width: 25%;
+}
+/* line 57, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .design-set-comps li:nth-of-type(5n) {
+  clear: left;
+}
+/* line 61, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .design-set-comps a {
+  border: solid #FFFFFF 1px;
+  border-radius: 4px;
+  display: block;
+  padding: 14px;
+  text-decoration: none;
+}
+/* line 67, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .design-set-comps a:hover {
+  background: #f4f5f7;
+  border-color: #ebecf1;
+  color: #4360d5;
+}
+/* line 73, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .design-set-comps img {
+  display: block;
+  max-width: 100%;
+}
+/* line 77, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .design-set-comps .design-comp-title {
+  font-size: 12px;
+  line-height: 1.25;
+  padding: 8px 5px 10px 5px;
+  text-align: center;
+}
+/* line 87, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .sidebar-block li {
+  line-height: 1.25;
+  margin: 5px 0;
+  padding-left: 10px;
+}
+/* line 93, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .sidebar-block-title {
+  color: #292a2b;
+  font: normal 18px/1 "titillium-semibold", sans-serif;
+  margin-bottom: 8px;
+}
+/* line 99, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .sidebar-block-team {
+  border-bottom: solid #e8e9ef 1px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+/* line 104, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .team-member-name {
+  font-weight: bold;
+}
+/* line 107, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .team-member-role {
+  color: #9e9d98;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+/* line 113, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .sidebar-block-links {
+  color: #787771;
+}
+/* line 115, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .sidebar-block-links li {
+  padding-left: 0;
+}
+/* line 118, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .sidebar-block-links a {
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  background: #f1f2f5;
+  border-radius: 3px;
+  color: inherit;
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+/* line 126, ../sass/partials/_pg-design-project.scss */
+.pg-design-single .sidebar-block-links a:hover {
+  background: #dfe1e8;
+  color: #51504c;
+}
+
+/* line 5, ../sass/partials/_pg-design-comp.scss */
+.pg-design-attachment {
+  background: url("../img/bg-transparent-grid.png") 0 0 repeat;
+  padding-top: 30px;
+}
+/* line 10, ../sass/partials/_pg-design-comp.scss */
+.pg-design-attachment .design-display {
+  background-position: top center;
+  background-repeat: no-repeat;
+}

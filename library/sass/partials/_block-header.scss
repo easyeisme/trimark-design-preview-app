@@ -1,0 +1,108 @@
+
+// ===== HEADER
+// ================================================================================
+
+.header-main {
+	background: $color-navy;
+	color: #FFFFFF;
+	.page-wrapper {
+		min-height: 55px;
+		position: relative;
+	}
+}
+
+// TriMark Logo
+.header-logo {
+	border: solid mix(#FFFFFF, $color-navy, 25%) 2px;
+	border-radius: 50%;
+	height: 42px;
+	left: 50%;
+	margin: -22px 0 0 -21px;
+	padding: 2px;
+	position: absolute;
+	top: 50%;
+	width: 42px;
+	.circle {
+		background: mix(#FFFFFF, $color-navy, 25%);
+		border-radius: 50%;
+		height: 100%;
+		width: 100%;
+	}
+	.triangle {
+		$triangle-height: 12px;
+		border-color: transparent transparent transparent $color-navy;
+		border-style: solid;
+		border-width: $triangle-height/2 0 $triangle-height/2 $triangle-height*0.866;
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 0;
+	}
+	.triangle-top {
+		left: 11px;
+		top: 6px;
+	}
+	.triangle-right {
+		left: 23px;
+		top: 13px;
+	}
+	.triangle-bottom {
+		left: 11px;
+		top: 20px;
+	}
+}
+
+// "Go Back" Button
+.header-back-btn {
+	@include transition(color 0.1s linear);
+	color: mix(#FFFFFF, $color-navy, 50%);
+	display: block;
+	font-size: 12px;
+	height: 40px;
+	left: 0;
+	line-height: 40px;
+	margin-top: -20px;
+	position: absolute;
+	text-decoration: none;
+	text-transform: uppercase;
+	top: 50%;
+	i {
+		display: inline-block;
+		float: left;
+		margin-right: 10px;
+		&:before {
+			@extend .fa;
+			content: "\f053"; // f190, f104, f053
+			font-size: 20px;
+			line-height: 40px;
+		}
+	}
+	&:hover {
+		color: #FFFFFF;
+	}
+}
+
+// "See All Comps" Button
+.header-comp-grid-btn {
+	display: none;
+}
+
+// Design Comp Information
+.header-comp-info {
+	float: right;
+	line-height: 1;
+	padding: 10px 0 5px 0;
+	text-align: right;
+	width: 440px;
+	.client-design {
+		color: mix(#FFFFFF, $color-navy, 50%);
+		font-size: 11px;
+		margin-bottom: 3px;
+		text-transform: uppercase;
+	}
+	.comp {
+		font-family: $font-titillium-regular;
+		font-size: 18px;
+	}
+}

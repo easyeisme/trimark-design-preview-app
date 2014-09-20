@@ -1,0 +1,64 @@
+
+// ===== DESIGN ARCHIVES
+// ================================================================================
+
+.pg-design-archive {
+
+	// Link
+	.project-link {
+		@include transition(all 0.1s ease-in-out);
+		color: $color-navy;
+		display: block;
+		padding: 16px 20px;
+		position: relative;
+		text-decoration: none;
+		&:before {
+			@include transition(width 0.1s ease-in-out);
+			background: lighten($color-navy, 30%);
+			bottom: -1px;
+			content: " ";
+			display: block;
+			left: -1px;
+			position: absolute;
+			top: -1px;
+			width: 0;
+		}
+		&:hover {
+			border-color: darken($color-gray-lite, 15%);
+			box-shadow: 2px 2px 1px darken($color-gray-lite, 8%);
+			color: lighten($color-navy, 30%);
+		}
+		&:hover:before {
+			width: 4px;
+		}
+	}
+
+	// Title
+	.project-title {
+		color: inherit;
+		font-family: $font-titillium-semibold;
+		font-size: 20px;
+	}
+
+	// Meta Data
+	.project-meta {
+		color: lighten($color-gray, 30%);
+		font-size: 11px;
+		line-height: 1.4;
+		margin-top: 3px;
+		text-transform: uppercase;
+		.last-updated {
+			.date {
+				font-size: 12px;
+				text-transform: none;
+			}
+			.ago {
+				display: inline-block;
+				margin-left: 5px;
+			}
+		}
+	}
+
+}
+
+

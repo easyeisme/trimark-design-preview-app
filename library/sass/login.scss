@@ -1,0 +1,122 @@
+@import "base/variables";
+
+
+
+// ===== GENERAL STYLES
+// ================================================================================
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html {
+	font-size: $default-font-size;
+}
+
+.pie {
+	behavior: url('/PIE.htc');
+}
+
+body.login {
+	background: #EEEEEE url('../img/bg-pattern-knit.png') 0 0 repeat;
+	color: $default-font-color;
+	font-family: $default-font;
+	padding-top: 1px; // prevent margin overflow on login form
+}
+
+
+
+// ===== LOGIN FORM
+// ================================================================================
+
+#login {
+	@extend .pie;
+	background: #FFFFFF;
+	border-radius: 12px;
+	box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
+	margin: 8% auto 0 auto;
+	overflow: auto;
+	padding: 0;
+	position: relative;
+	&:before {
+		@extend .pie;
+		border: dashed $color-gray-lite 1px;
+		border-radius: 9px;
+		bottom: 4px;
+		content: " ";
+		left: 4px;
+		right: 4px;
+		position: absolute;
+		top: 4px;
+		z-index: 0;
+	}
+	* {
+		// The :before pseudo-selector around the form wrapper prevents elements
+		// from being clicked.  Add the following code to make sure the children
+		// of this wrapper remain above the wrapper (i.e. clickable).
+		position: relative;
+	}
+}
+
+.login {
+	h1 {
+		margin-top: 40px;
+		a {
+			background: url('../img/logo-jefferies-wp-login.png') 0 0 no-repeat;
+			display: inline-block;
+			height: 45px;
+			margin: 0;
+			overflow: hidden;
+			text-indent: -9999px;
+			width: 270px;
+		}
+	}
+	.message {
+		border: solid $color-gray-lite 1px;
+		border-left: solid #7AD03A 4px;
+		box-shadow: none;
+		margin: 25px 25px 0 25px;
+	}
+	#login_error {
+		border: solid $color-gray-lite 1px;
+		border-left: solid #DD3D36 4px;
+		box-shadow: none;
+		margin: 25px 25px 0 25px;
+	}
+	form {
+		background: none;
+		border: 0;
+		box-shadow: none;
+		margin: 40px 0 40px 0;
+		padding: 0 25px;
+	}
+	input {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+	}
+	#nav, #backtoblog {
+		margin: 0;
+		padding: 0;
+		a {
+			background: #EEEEEE;
+			border-radius: 5px;
+			display: block;
+			line-height: 100%;
+			margin: 0 auto;
+			padding: 10px 0;
+			text-align: center;
+			width: 230px;
+			&:hover {
+				background: #2EA2CC;
+				color: #FFFFFF;
+			}
+		}
+	}
+	#backtoblog {
+		margin: 8px 0 32px 0;
+	}
+}
+
+

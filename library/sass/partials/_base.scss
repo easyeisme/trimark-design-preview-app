@@ -1,0 +1,131 @@
+
+// ===== GENERAL STYLES
+// ================================================================================
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html {
+	font-size: $default-font-size;
+}
+body {
+	background: $color-gray-lite;
+	color: $default-font-color;
+	font-family: $font-sans-serif;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+// ===== ANCHOR TEXT / LINKS
+// ================================================================================
+
+a {
+	color: $color-gray;
+	cursor: pointer;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+
+
+// ===== HEADINGS
+// ================================================================================
+
+h1, h2,
+.h1, .h2 {
+	font-family: $font-titillium-light;
+	font-weight: normal;
+	line-height: 1;
+	margin: 20px 0;
+}
+h1, .h1 {
+	color: $color-navy;
+	font-size: 40px;
+}
+h2, .h2 {
+	font-size: 24px;
+}
+
+
+
+// ===== LISTS
+// ================================================================================
+
+ul, ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.ul li {
+	padding-left: 35px;
+	position: relative;
+	&:before {
+		content: "\2022";
+		display: inline-block;
+		left: 15px;
+		position: absolute;
+	}
+}
+
+
+
+// ===== HELPER CLASSES
+// ================================================================================
+
+.no-margin { margin: 0; }
+
+.fa {
+	display: inline-block;
+	font: normal normal normal 14px/1 $font-fontawesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+
+// ===== CLEARFIX
+// ================================================================================
+
+.clear {
+	clear: both;
+}
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+
+
+
+// ===== SPRITES
+// ================================================================================
+
+.sprite-main {
+	background-image: url('../img/sprite-main.png');
+	background-repeat: no-repeat;
+}
+
+
+
+// ===== PAGE WRAPPER
+// ================================================================================
+
+.page-wrapper {
+	margin: 0 auto;
+	width: 960px;
+}
+
+

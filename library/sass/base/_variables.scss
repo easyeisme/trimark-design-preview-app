@@ -1,0 +1,40 @@
+
+// ===== FONTS / TYPOGRAPHY
+// ================================================================================
+
+// Generic
+$font-serif: Times, 'Times New Roman', serif;
+$font-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Custom
+$font-fontawesome: 'FontAwesome', sans-serif;
+$font-titillium-thin: 'titillium-thin', sans-serif;
+$font-titillium-light: 'titillium-light', sans-serif;
+$font-titillium-regular: 'titillium-regular', sans-serif;
+$font-titillium-semibold: 'titillium-semibold', sans-serif;
+$font-titillium-bold: 'titillium-bold', sans-serif;
+
+
+
+// ===== COLOR SWATCHES (MASTER SET)
+// ================================================================================
+
+// Navy
+$color-navy: #172768;
+
+// Gray
+$color-gray: #51504C;
+$color-gray-dark: #292A2B;
+$color-gray-lite: #EEEFF3;
+
+
+
+// ===== SETTINGS & CONFIGURATION
+// ================================================================================
+
+// Default Font Settings
+$default-font-size: 14px;
+$default-font-color: $color-gray;
+$default-font: $font-sans-serif;
+
+
