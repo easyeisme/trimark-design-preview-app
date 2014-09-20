@@ -20,9 +20,9 @@ if(is_front_page()) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	*/ ?>
 
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/library/img/favicon.png">
 	<!--[if IE]>
-		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/library/img/favicon.ico">
 	<![endif]-->
 
 	<?php wp_head(); ?>
