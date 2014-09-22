@@ -123,6 +123,8 @@ jQuery(document).ready(function($) {
 	// ===== Design Comp
 	// ================================================================================
 
+	// TODO - comp meta is not displaying when bxSlider is activated.  It may be worthwile
+	// to just come up with another solution.  What I have feels bloated.
 	var designComp = {
 		settings: {
 			required_element: $('.pg-design-attachment'),
