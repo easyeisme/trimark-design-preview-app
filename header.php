@@ -71,7 +71,7 @@ if($pg == 'front page') {
 				<?php if($pg == 'design comp') { ?>
 
 					<?php // Controls ?>
-					<a class="header-btn header-back-btn" href="../"><i class="fa fa-chevron-left"></i> Project</a>
+					<a class="header-btn header-back-btn header-back2project-btn" href="../"><i class="fa fa-chevron-left"></i> <span class="label">Return to<br/>Project</span></a>
 					<div class="header-btn header-comp-grid-btn closed"><i class="i-trigger fa fa-th"></i></div>
 
 					<?php

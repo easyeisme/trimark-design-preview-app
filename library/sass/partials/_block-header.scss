@@ -94,12 +94,19 @@
 		}
 	}
 }
+.header-back2project-btn {
+	line-height: 1.1;
+	.label {
+		display: inline-block;
+		padding-top: 7px;
+	}
+}
 
 // "See All Comps" Button
 .header-comp-grid-btn {
-	left: 100px;
+	left: 120px;
 	i:before {
-		font-size: 20px;
+		font-size: 24px;
 	}
 }
 
