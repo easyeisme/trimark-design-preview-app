@@ -1,11 +1,24 @@
 <?php
-// Redirect users from the front page accordingly
+// Determine what type of page is being displayed.
+// The behavior of the header will change depending on the type of page being displayed.
+$pg = '';
 if(is_front_page()) {
+	$pg = 'front page';
+}
+if((get_post_type($post) == 'design-project') && is_single()) {
+	$pg = 'design project';
+}
+if(is_attachment() && (get_post_type($post->post_parent) == 'design-project')) {
+	$pg = 'design comp';
+}
+
+
+// Redirect users from the front page accordingly
+if($pg == 'front page') {
 	header('Location: designs/');
 	exit;
 }
 ?>
-
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -32,73 +45,100 @@ if(is_front_page()) {
 
 
 	<header class="header-main">
-		<div class="page-wrapper">
+		<div class="header-toolbar-prime">
+			<div class="page-wrapper main clearfix">
 
 
-			<?php // TriMark Logo ?>
-			<div class="header-logo">
-				<div class="circle"></div>
-				<div class="triangle triangle-top"></div>
-				<div class="triangle triangle-right"></div>
-				<div class="triangle triangle-bottom"></div>
-			</div><!-- .header-logo -->
+				<?php // TriMark Logo ?>
+				<div class="header-logo">
+					<div class="circle"></div>
+					<div class="triangle triangle-top"></div>
+					<div class="triangle triangle-right"></div>
+					<div class="triangle triangle-bottom"></div>
+				</div><!-- .header-logo -->
 
 
-			<?php // Additions to Header for Design Attachments ?>
-			<?php if(is_user_logged_in() && (get_post_type($post) == 'design-project') && is_single()) { ?>
+				<?php // Additions to Header for Design Attachments ?>
+				<?php if(($pg == 'design project') && is_user_logged_in()) { ?>
 
-				<?php // Controls ?>
-				<a class="header-back-btn" href="../"><i></i> Back</a>
+					<?php // Controls ?>
+					<a class="header-btn header-back-btn" href="../"><i class="fa fa-chevron-left"></i> Back</a>
 
-			<?php } ?>
+				<?php } ?>
 
 
-			<?php // Additions to Header for Design Attachments ?>
-			<?php if(is_attachment() && (get_post_type($post->post_parent) == 'design-project')) { ?>
+				<?php // Additions to Header for Design Comp Attachments ?>
+				<?php if($pg == 'design comp') { ?>
 
-				<?php // Controls ?>
-				<a class="header-back-btn" href="../"><i></i> Back</a>
-				<div class="header-comp-grid-btn"></div>
+					<?php // Controls ?>
+					<a class="header-btn header-back-btn" href="../"><i class="fa fa-chevron-left"></i> Project</a>
+					<div class="header-btn header-comp-grid-btn closed"><i class="i-trigger fa fa-th"></i></div>
 
-				<?php
-				// Collect the necessary information about the current comp.
-				// Also, collect all other comps that are within the same project as this comp.
-				$design_sets = get_field('dp_design_set', $post->post_parent);
-				$comp_set_full = array();
-				$comp_info = array(
-					'client-name' => get_the_title($post->post_parent),
-					'design-set-name' => '',
-					'comp-name' => ''
-				);
-				foreach($design_sets as $d) {
-					if(count($d['dp_design_set_design']) > 0) {
-						foreach($d['dp_design_set_design'] as $c) {
-							// Collect info on current comp
-							if($c['dp_design_set_design_img_full'] == $post->ID) {
-								$comp_info['design-set-name'] = $d['dp_design_set_title'];
-								$comp_info['comp-name'] = $c['dp_design_set_design_name'];
+					<?php
+					// Collect the necessary information about the current comp.
+					// Also, collect all other comps that are within the same project as this comp.
+					$design_sets = get_field('dp_design_set', $post->post_parent);
+					$comp_set_full = array();
+					$comp_info = array(
+						'client-name' => get_the_title($post->post_parent),
+						'design-set-name' => '',
+						'comp-name' => ''
+					);
+					foreach($design_sets as $d) {
+						if(count($d['dp_design_set_design']) > 0) {
+							foreach($d['dp_design_set_design'] as $c) {
+								// Collect info on current comp
+								if($c['dp_design_set_design_img_full'] == $post->ID) {
+									$comp_info['design-set-name'] = $d['dp_design_set_title'];
+									$comp_info['comp-name'] = $c['dp_design_set_design_name'];
+								}
+								// Collect info on all related comps
+								$comp_set_full[] = array(
+									'id' => $c['dp_design_set_design_img_full'],
+									'link' => get_attachment_link($c['dp_design_set_design_img_full']),
+									'img' => $c['dp_design_set_design_img_thumb'],
+									'set' => $d['dp_design_set_title'],
+									'name' => $c['dp_design_set_design_name']
+								);
 							}
-							// Collect info on all related comps
-							$comp_set_full[] = array(
-								'link' => get_attachment_link($c['dp_design_set_design_img_full']),
-								'img' => $c['dp_design_set_design_img_thumb'],
-								'name' => $c['dp_design_set_design_name']
-							);
 						}
 					}
-				}
-				?>
+					?>
 
-				<?php // Comp Information ?>
-				<div class="header-comp-info">
-					<div class="client-design">
-						<?=$comp_info['client-name']?> &nbsp;-&nbsp;
-						<?=$comp_info['design-set-name']?>
-					</div>
-					<div class="comp"><?=$comp_info['comp-name']?></div>
-				</div><!-- .header-comp-info -->
+					<?php // Comp Information ?>
+					<div class="header-comp-info">
+						<div class="client-design">
+							<?=$comp_info['client-name']?> &nbsp;-&nbsp;
+							<?=$comp_info['design-set-name']?>
+						</div>
+						<div class="comp"><?=$comp_info['comp-name']?></div>
+					</div><!-- .header-comp-info -->
 
-			<?php } ?>
+				<?php } ?>
 
-		</div><!-- .page-wrapper -->
+			</div><!-- .page-wrapper -->
+		</div><!-- .header-toolbar-prime -->
+
+		<?php // Project Comp Sets ?>
+		<?php if($pg == 'design comp') { ?>
+			<div class="header-project-comp-grid">
+				<div class="page-wrapper">
+					<ul class="clearfix">
+						<?php
+						foreach($comp_set_full as $c) {
+							echo '<li><a href="'.$c['link'].'"'.(($c['id']==$post->ID) ? ' class="active"' : '').'>';
+								echo '<img src="'.$c['img'].'" />';
+								echo '<div class="comp-meta">';
+									echo '<div class="set">'.$c['set'].'</div>';
+									echo '<div class="title">'.$c['name'].'</div>';
+								echo '</div>';
+							echo '</a></li>';
+						}
+						?>
+					</ul>
+					<div class="header-project-comp-grid-ctrl ctrl-prev"><i class="fa fa-arrow-circle-o-left"></i></div>
+					<div class="header-project-comp-grid-ctrl ctrl-next"><i class="fa fa-arrow-circle-o-right"></i></div>
+				</div><!-- .page-wrapper -->
+			</div><!-- .header-project-comp-grid -->
+		<?php } ?>
 	</header><!-- .header-main -->

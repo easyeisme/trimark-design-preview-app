@@ -3,9 +3,14 @@
 // ================================================================================
 
 .header-main {
-	background: $color-navy;
 	color: #FFFFFF;
-	.page-wrapper {
+	position: relative;
+	.header-toolbar-prime {
+		background: $color-navy;
+		position: relative;
+		z-index: 1;
+	}
+	.page-wrapper.main {
 		min-height: 55px;
 		position: relative;
 	}
@@ -53,28 +58,23 @@
 	}
 }
 
-// "Go Back" Button
-.header-back-btn {
+// Generic Header Button
+.header-btn {
 	@include transition(color 0.1s linear);
 	color: mix(#FFFFFF, $color-navy, 50%);
+	cursor: pointer;
 	display: block;
 	font-size: 12px;
 	height: 40px;
-	left: 0;
 	line-height: 40px;
 	margin-top: -20px;
 	position: absolute;
+	top: 50%;
 	text-decoration: none;
 	text-transform: uppercase;
-	top: 50%;
 	i {
 		display: inline-block;
-		float: left;
-		margin-right: 10px;
 		&:before {
-			@extend .fa;
-			content: "\f053"; // f190, f104, f053
-			font-size: 20px;
 			line-height: 40px;
 		}
 	}
@@ -83,9 +83,24 @@
 	}
 }
 
+// "Go Back" Button
+.header-back-btn {
+	left: 0;
+	i {
+		float: left;
+		margin-right: 10px;
+		&:before {
+			font-size: 20px;
+		}
+	}
+}
+
 // "See All Comps" Button
 .header-comp-grid-btn {
-	display: none;
+	left: 100px;
+	i:before {
+		font-size: 20px;
+	}
 }
 
 // Design Comp Information
@@ -104,5 +119,103 @@
 	.comp {
 		font-family: $font-titillium-regular;
 		font-size: 18px;
+	}
+}
+
+// Project Design Comps
+.header-project-comp-grid {
+	background: #FFFFFF;
+	border-bottom: solid darken($color-gray-lite, 10%) 1px;
+	position: absolute;
+	top: -500px;
+	width: 100%;
+	z-index: 0;
+	.page-wrapper {
+		padding: 10px 0;
+		position: relative;
+	}
+	li {
+		display: inline-block;
+		float: left;
+		width: 120px;
+	}
+	a {
+		border: solid #FFFFFF 1px;
+		border-radius: 4px;
+		display: block;
+		padding: 10px;
+		position: relative;
+		text-decoration: none;
+		&:hover {
+			background: lighten($color-gray-lite, 2%);
+			border-color: darken($color-gray-lite, 1%);
+		}
+		&.active {
+			background: $color-gray-lite;
+			border-color: darken($color-gray-lite, 15%);
+		}
+	}
+	img {
+		display: block;
+		max-width: 100%;
+	}
+	.comp-meta {
+		background: rgba(0,0,0,0.8);
+		border-radius: 4px;
+		color: #FFFFFF;
+		display: none;
+		font-size: 11px;
+		left: 50%;
+		line-height: 1.25;
+		margin-left: -75px;
+		padding: 8px 10px;
+		position: absolute;
+		text-align: center;
+		width: 150px;
+		z-index: 1;
+		.set {
+			color: darken($color-gray-lite, 30%);
+			font-weight: bold;
+			margin-bottom: 3px;
+		}
+		&:after {
+			border-style: solid;
+			border-width: 0 6px 6px 6px;
+			border-color: transparent transparent rgba(0,0,0,0.8) transparent;
+			content: " ";
+			height: 0;
+			left: 50%;
+			margin-left: -6px;
+			position: absolute;
+			top: -6px;
+			width: 0;
+		}
+	}
+	a:hover .comp-meta {
+		display: block;
+	}
+	.header-project-comp-grid-ctrl {
+		color: darken($color-gray-lite, 10%);
+		cursor: pointer;
+		display: none;
+		height: 40px;
+		margin-top: -20px;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		width: 40px;
+		&.ctrl-prev {
+			left: 0;
+		}
+		&.ctrl-next {
+			right: 0;
+		}
+		& i {
+			font-size: 30px;
+			line-height: 40px;
+		}
+		&:hover {
+			color: darken($color-gray-lite, 30%);
+		}
 	}
 }
