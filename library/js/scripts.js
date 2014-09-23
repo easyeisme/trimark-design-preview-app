@@ -33,6 +33,7 @@ jQuery(document).ready(function($) {
 			});
 		},
 
+		// Scrolls the browser viewport to a designated target
 		scrollToTarget: function(target) {
 			$('html,body').animate({ scrollTop: $('a[name="'+target+'"]').offset().top }, 500);
 		}
@@ -49,13 +50,12 @@ jQuery(document).ready(function($) {
 			required_element: $('.pg-design-single'),
 			comp_link: $('.design-set-comp-link'),
 			scroll_timer: 0,
-			// TODO - GIVE ME SOME COMMENTS ...
 			sidebar: $('.col-sidebar'),
-			sidebar_offset: 0,
+			sidebar_offset: 0, // Sidebar initial/natural position (relative to the top of the window)
 			sidebar_height: 0,
-			sidebar_margin: 0,
-			sidebar_margin_default: 0,
-			sidebar_padding: 15,
+			sidebar_margin: 0, // Sidebar top margin (manipulated to make sidebar stay with scroll)
+			sidebar_margin_default: 0, // Initial sidebar top margin (used to reset to default state)
+			sidebar_padding: 15, // Allows for additional spacing away from the browser window (optional)
 			body_col: $('.col-body'),
 			body_col_height: 0,
 			window_height: 0,
@@ -64,9 +64,12 @@ jQuery(document).ready(function($) {
 		init: function() {
 			if(globalHelper.elementExists(this.settings.required_element)) {
 				this.bindUIActions();
-				// TODO - GIVE ME SOME COMMENTS ...
+				// Collect information about the default state of the sidebar, body column, and browser window
 				this.settings.sidebar_offset = this.settings.sidebar.offset().top;
 				this.settings.sidebar_margin_default = parseInt(this.settings.sidebar.css('marginTop'));
+				this.settings.sidebar_height = this.settings.sidebar.height();
+				this.settings.body_col_height = this.settings.body_col.height();
+				this.settings.window_height = $(window).height();
 			}
 		},
 		bindUIActions: function() {
@@ -92,20 +95,16 @@ jQuery(document).ready(function($) {
 		},
 		// Reposition the sidebar to stay with the user as the browser scrolls
 		positionSidebar: function() {
-			// TODO - GIVE ME SOME COMMENTS ...
-			// TODO - GIVE ME SOME COMMENTS ...
-			// TODO - GIVE ME SOME COMMENTS ...
-			// TODO - GIVE ME SOME COMMENTS ...
-			// TODO - GIVE ME SOME COMMENTS ...
-			this.settings.sidebar_height = this.settings.sidebar.height();
-			this.settings.body_col_height = this.settings.body_col.height();
-			this.settings.window_height = $(window).height();
 			this.settings.window_scrolltop = $(window).scrollTop();
+			// If the top of the browser window has surpassed the top of the sidebar ...
 			if(this.settings.window_scrolltop > this.settings.sidebar_offset) {
+				// Reposition the sidebar only if it's shorter than the height of the browser window
 				if(this.settings.sidebar_height > this.settings.window_height) {
 					this.settings.sidebar_margin = this.settings.sidebar_margin_default;
 				} else {
+					// Determine the new sidebar position
 					this.settings.sidebar_margin = this.settings.window_scrolltop - this.settings.sidebar_offset + this.settings.sidebar_margin_default + this.settings.sidebar_padding;
+					// Do not allow the sidebar to exceed the length of the body column associated with it
 					if((this.settings.sidebar_height + this.settings.sidebar_margin) > this.settings.body_col_height) {
 						this.settings.sidebar_margin = this.settings.body_col_height - this.settings.sidebar_height;
 					}
@@ -113,6 +112,7 @@ jQuery(document).ready(function($) {
 			} else {
 				this.settings.sidebar_margin = this.settings.sidebar_margin_default;
 			}
+			// Finally, position the sidebar based on the settings collected above
 			this.settings.sidebar.stop().animate({ marginTop: this.settings.sidebar_margin }, 250);
 		}
 	};
