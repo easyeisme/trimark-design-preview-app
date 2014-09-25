@@ -2317,17 +2317,17 @@ ul, ol {
       color: #51504C; }
 
 .pg-design-attachment {
-  /*
-   * TODO
-   * Temporarily hard-coded white background.  Need to program the ability that will
-   * allow administrators to control the background for each comp.  Also consider having
-   * a master default background for all comps (so that you don't have to select the
-   * background each time).  However, this may cause too much confusion, or may not really
-   * improve the user experience.
-  **/
-  background: #FFFFFF;
-  background-attachment: fixed;
-  padding-top: 30px; }
+  padding: 0; }
+  .pg-design-attachment .page-background {
+    background: url("../img/bg-transparent-grid.png") 0 0 repeat;
+    background-attachment: fixed;
+    padding: 30px 0; }
+    .pg-design-attachment .page-background.bg-setting-transparency-grid {
+      background: url("../img/bg-transparent-grid.png") 0 0 repeat; }
+    .pg-design-attachment .page-background.bg-setting-white {
+      background: #FFFFFF; }
+    .pg-design-attachment .page-background.bg-setting-black {
+      background: #1E1E1E; }
   .pg-design-attachment .design-display {
     background-position: top center;
     background-repeat: no-repeat; }

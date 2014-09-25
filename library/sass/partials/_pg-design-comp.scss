@@ -3,18 +3,23 @@
 // ================================================================================
 
 .pg-design-attachment {
-	/*
-	 * TODO
-	 * Temporarily hard-coded white background.  Need to program the ability that will
-	 * allow administrators to control the background for each comp.  Also consider having
-	 * a master default background for all comps (so that you don't have to select the
-	 * background each time).  However, this may cause too much confusion, or may not really
-	 * improve the user experience.
-	**/
-	// background: url('../img/bg-transparent-grid.png') 0 0 repeat;
-	background: #FFFFFF;
-	background-attachment: fixed;
-	padding-top: 30px;
+	padding: 0;
+
+	// Page Background
+	.page-background {
+		background: url('../img/bg-transparent-grid.png') 0 0 repeat;
+		background-attachment: fixed;
+		padding: 30px 0;
+		&.bg-setting-transparency-grid {
+			background: url('../img/bg-transparent-grid.png') 0 0 repeat;
+		}
+		&.bg-setting-white {
+			background: #FFFFFF;
+		}
+		&.bg-setting-black {
+			background: #1E1E1E;
+		}
+	}
 
 	// Design Display
 	.design-display {
