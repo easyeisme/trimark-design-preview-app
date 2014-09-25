@@ -2317,7 +2317,15 @@ ul, ol {
       color: #51504C; }
 
 .pg-design-attachment {
-  background: url("../img/bg-transparent-grid.png") 0 0 repeat;
+  /*
+   * TODO
+   * Temporarily hard-coded white background.  Need to program the ability that will
+   * allow administrators to control the background for each comp.  Also consider having
+   * a master default background for all comps (so that you don't have to select the
+   * background each time).  However, this may cause too much confusion, or may not really
+   * improve the user experience.
+  **/
+  background: #FFFFFF;
   background-attachment: fixed;
   padding-top: 30px; }
   .pg-design-attachment .design-display {
