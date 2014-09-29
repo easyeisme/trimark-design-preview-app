@@ -2056,24 +2056,29 @@ ul, ol {
   .header-btn:hover {
     color: #FFFFFF; }
 
-.header-back-btn {
+.header-btn-back {
   left: 0; }
-  .header-back-btn i {
+  .header-btn-back i {
     float: left;
     margin-right: 10px; }
-    .header-back-btn i:before {
+    .header-btn-back i:before {
       font-size: 20px; }
 
-.header-back2project-btn {
+.header-btn-back2project {
   line-height: 1.1; }
-  .header-back2project-btn .label {
+  .header-btn-back2project .label {
     display: inline-block;
     padding-top: 7px; }
 
-.header-comp-grid-btn {
+.header-btn-comp-grid {
   left: 120px; }
-  .header-comp-grid-btn i:before {
+  .header-btn-comp-grid i:before {
     font-size: 24px; }
+
+.header-btn-download {
+  left: 160px; }
+  .header-btn-download i:before {
+    font-size: 22px; }
 
 .header-comp-info {
   float: right;

@@ -84,7 +84,7 @@
 }
 
 // "Go Back" Button
-.header-back-btn {
+.header-btn-back {
 	left: 0;
 	i {
 		float: left;
@@ -94,7 +94,7 @@
 		}
 	}
 }
-.header-back2project-btn {
+.header-btn-back2project {
 	line-height: 1.1;
 	.label {
 		display: inline-block;
@@ -103,10 +103,18 @@
 }
 
 // "See All Comps" Button
-.header-comp-grid-btn {
+.header-btn-comp-grid {
 	left: 120px;
 	i:before {
 		font-size: 24px;
+	}
+}
+
+// "Download Comp" Button
+.header-btn-download {
+	left: 160px;
+	i:before {
+		font-size: 22px;
 	}
 }
 

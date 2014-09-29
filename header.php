@@ -74,7 +74,7 @@ if($pg == 'front page') {
 				<?php if(($pg == 'design project') && is_user_logged_in()) { ?>
 
 					<?php // Controls ?>
-					<a class="header-btn header-back-btn" href="../"><i class="fa fa-chevron-left"></i> Back</a>
+					<a class="header-btn header-btn-back" href="../"><i class="fa fa-chevron-left"></i> Back</a>
 
 				<?php } ?>
 
@@ -82,19 +82,17 @@ if($pg == 'front page') {
 				<?php // Additions to Header for Design Comp Attachments ?>
 				<?php if($pg == 'design comp') { ?>
 
-					<?php // Controls ?>
-					<a class="header-btn header-back-btn header-back2project-btn" href="../"><i class="fa fa-chevron-left"></i> <span class="label">Return to<br/>Project</span></a>
-					<div class="header-btn header-comp-grid-btn closed"><i class="i-trigger fa fa-th"></i></div>
-
 					<?php
 					// Collect the necessary information about the current comp.
 					// Also, collect all other comps that are within the same project as this comp.
 					$design_sets = get_field('dp_design_set', $post->post_parent);
 					$comp_set_full = array();
+					$comp_meta = wp_get_attachment_metadata($post->ID);
 					$comp_info = array(
 						'client-name' => get_the_title($post->post_parent),
 						'design-set-name' => '',
-						'comp-name' => ''
+						'comp-name' => '',
+						'download-url' => WP_CONTENT_URL.'/uploads/'.$comp_meta['file']
 					);
 					foreach($design_sets as $d) {
 						if(count($d['dp_design_set_design']) > 0) {
@@ -116,6 +114,11 @@ if($pg == 'front page') {
 						}
 					}
 					?>
+
+					<?php // Controls ?>
+					<a class="header-btn header-btn-back header-btn-back2project" href="../"><i class="fa fa-chevron-left"></i> <span class="label">Return to<br/>Project</span></a>
+					<div class="header-btn header-btn-comp-grid closed"><i class="i-trigger fa fa-th"></i></div>
+					<a class="header-btn header-btn-download" href="<?=$comp_info['download-url']?>" download target="_blank"><i class="i-trigger fa fa-download"></i></a>
 
 					<?php // Comp Information ?>
 					<div class="header-comp-info">

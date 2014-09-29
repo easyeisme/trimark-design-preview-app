@@ -120,7 +120,7 @@ jQuery(document).ready(function($) {
 
 
 
-	// ===== Design Comp
+	// ===== DESIGN COMP
 	// ================================================================================
 
 	// TODO - comp meta is not displaying when bxSlider is activated.  It may be worthwile
@@ -129,7 +129,7 @@ jQuery(document).ready(function($) {
 		settings: {
 			required_element: $('.pg-design-attachment'),
 			header: $('.header-main'),
-			project_comp_grid_trigger: $('.header-comp-grid-btn'),
+			project_comp_grid_trigger: $('.header-btn-comp-grid'),
 			project_comp_grid: $('.header-project-comp-grid'),
 			project_comp: $('.header-project-comp-grid li'),
 			project_comp_first: $('.header-project-comp-grid li').eq(0),
