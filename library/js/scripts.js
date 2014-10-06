@@ -48,6 +48,8 @@ jQuery(document).ready(function($) {
 	var singleProject = {
 		settings: {
 			required_element: $('.pg-design-single'),
+			comp_set: $('.design-set-comps'),
+			comp_set_links: {},
 			comp_link: $('.design-set-comp-link'),
 			scroll_timer: 0,
 			sidebar: $('.col-sidebar'),
@@ -79,19 +81,20 @@ jQuery(document).ready(function($) {
 			});
 		},
 
-		// Modifies each design comp link so that they all have the same height.
+		// Modifies each design comp link so that they all have the same height within a given set.
 		matchLinkHeights: function() {
-			this.settings.comp_link.height(this.getMaxLinkHeight());
-		},
-		// Determines the largest design comp height.
-		getMaxLinkHeight: function() {
-			var maxHeight = 0;
-			this.settings.comp_link.each(function() {
-				if($(this).height() > maxHeight) {
-					maxHeight = $(this).height();
-				}
+			var _this = this;
+			var maxHeight;
+			this.settings.comp_set.each(function() {
+				maxHeight = 0;
+				_this.settings.comp_set_links = $(this).find('.design-set-comp-link');
+				_this.settings.comp_set_links.each(function() {
+					if($(this).height() > maxHeight) {
+						maxHeight = $(this).height();
+					}
+				});
+				_this.settings.comp_set_links.height(maxHeight);
 			});
-			return maxHeight;
 		},
 		// Reposition the sidebar to stay with the user as the browser scrolls
 		positionSidebar: function() {
