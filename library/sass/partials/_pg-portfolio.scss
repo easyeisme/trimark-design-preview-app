@@ -1,12 +1,22 @@
 
-// ===== PAST WORK ARCHIVE
+// ===== PORTFOLIO ARCHIVE
 // ================================================================================
 
-.pg-past-work-archive {
+.pg-portfolio-archive {
 	padding-top: 30px;
+	.portfolio {
+		margin-bottom: 60px;
+		padding-bottom: 50px;
+		border-bottom: solid darken($color-gray-lite, 10%) 1px;
+		&:last-child {
+			margin-bottom: 0;
+			border-bottom: 0;
+		}
+	}
 }
 
 .masonry-grid {
+	overflow: hidden;
 	&[data-columns]:before {
 		content: '4 .column.column1of4';
 	}

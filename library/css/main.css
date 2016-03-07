@@ -3895,25 +3895,40 @@ ul, ol {
   background-repeat: no-repeat;
 }
 
-/* line 5, ../sass/partials/_pg-past-work.scss */
-.pg-past-work-archive {
+/* line 5, ../sass/partials/_pg-portfolio.scss */
+.pg-portfolio-archive {
   padding-top: 30px;
 }
+/* line 7, ../sass/partials/_pg-portfolio.scss */
+.pg-portfolio-archive .portfolio {
+  margin-bottom: 60px;
+  padding-bottom: 50px;
+  border-bottom: solid #d0d3de 1px;
+}
+/* line 11, ../sass/partials/_pg-portfolio.scss */
+.pg-portfolio-archive .portfolio:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
 
-/* line 10, ../sass/partials/_pg-past-work.scss */
+/* line 18, ../sass/partials/_pg-portfolio.scss */
+.masonry-grid {
+  overflow: hidden;
+}
+/* line 20, ../sass/partials/_pg-portfolio.scss */
 .masonry-grid[data-columns]:before {
   content: '4 .column.column1of4';
 }
-/* line 13, ../sass/partials/_pg-past-work.scss */
+/* line 23, ../sass/partials/_pg-portfolio.scss */
 .masonry-grid .column {
   float: left;
   padding: 10px;
 }
-/* line 17, ../sass/partials/_pg-past-work.scss */
+/* line 27, ../sass/partials/_pg-portfolio.scss */
 .masonry-grid .column1of4 {
   width: 25%;
 }
-/* line 20, ../sass/partials/_pg-past-work.scss */
+/* line 30, ../sass/partials/_pg-portfolio.scss */
 .masonry-grid .grid-item {
   margin-bottom: 15px;
   background: #FFFFFF;
@@ -3921,30 +3936,30 @@ ul, ol {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
   overflow: hidden;
 }
-/* line 27, ../sass/partials/_pg-past-work.scss */
+/* line 37, ../sass/partials/_pg-portfolio.scss */
 .masonry-grid .section {
   margin: 0;
   padding: 15px;
   border-radius: 3px;
 }
-/* line 32, ../sass/partials/_pg-past-work.scss */
+/* line 42, ../sass/partials/_pg-portfolio.scss */
 .masonry-grid img {
   display: block;
   max-width: 100%;
 }
-/* line 36, ../sass/partials/_pg-past-work.scss */
+/* line 46, ../sass/partials/_pg-portfolio.scss */
 .masonry-grid .meta {
   margin-top: 12px;
   padding: 0 15px 15px 15px;
   color: #cacdda;
   font: italic 12px/1.25 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-/* line 42, ../sass/partials/_pg-past-work.scss */
+/* line 52, ../sass/partials/_pg-portfolio.scss */
 .masonry-grid .title {
   color: #92908b;
   font-weight: bold;
 }
-/* line 46, ../sass/partials/_pg-past-work.scss */
+/* line 56, ../sass/partials/_pg-portfolio.scss */
 .masonry-grid .byline {
   margin-top: 2px;
 }
