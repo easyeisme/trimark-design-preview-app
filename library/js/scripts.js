@@ -244,12 +244,12 @@ jQuery(document).ready(function($) {
 
 
 
-	// ===== PAST DESIGN WORK
+	// ===== PORTFOLIO
 	// ================================================================================
 
-	var pastDesignWork = {
+	var portfolio = {
 		settings: {
-			required_element: $('.pg-past-work-archive'),
+			required_element: $('.pg-portfolio-archive'),
 			fancybox: {
 				instance: {},
 				trigger: $('.grid-item .thumbnail'),
@@ -264,11 +264,12 @@ jQuery(document).ready(function($) {
 		},
 		bindUIActions: function() { },
 
+		// Initialize Fancybox
 		fancyboxInit: function() {
 			this.settings.fancybox.instance = this.settings.fancybox.trigger.fancybox(this.settings.fancybox.opts);
 		}
 	};
-	pastDesignWork.init();
+	portfolio.init();
 
 
 

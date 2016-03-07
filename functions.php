@@ -9,7 +9,7 @@ require_once('library/theme-includes/admin.php');
 require_once('library/theme-includes/functions.php');
 require_once('library/custom-post-type/design-project.php');
 require_once('library/custom-post-type/employee.php');
-require_once('library/custom-post-type/past-design-work.php');
+require_once('library/custom-post-type/portfolio.php');
 
 
 
@@ -37,21 +37,17 @@ add_action('after_setup_theme', 'bones_ahoy');
 // ===== CUSTOM THUMBNAIL IMAGE SIZES
 // ================================================================================
 
-/*
 // The following image sizes will automatically be created whenever new images
 // are added to the media manager.
-add_image_size('bones-thumb-600', 600, 150, true);
-add_image_size('bones-thumb-300', 300, 100, true);
+add_image_size('portfolio-thumb', 300, 9999);
 
 // The following function adds the ability to use the dropdown menu to select
 // the new images sizes you have just created from within the media manager.
 function bones_custom_image_sizes($sizes) {
 	return array_merge($sizes, array(
-		'bones-thumb-600' => '600px by 150px',
-		'bones-thumb-300' => '300px by 100px',
+		'portfolio-thumb' => 'Portfolio Thumbnail (300px x ?)',
    ));
 }
 add_filter('image_size_names_choose', 'bones_custom_image_sizes');
-*/
 
 ?>
