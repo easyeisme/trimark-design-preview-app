@@ -6,8 +6,9 @@
 @import "base/typography";
 @import "base/normalize";
 
-// Font Awesome Icons
+// Vendor Styles
 @import "vendor/fontawesome";
+@import "vendor/fancybox";
 
 // Base Styles
 @import "partials/base";
@@ -18,3 +19,4 @@
 @import "partials/pg-design-archives";
 @import "partials/pg-design-project";
 @import "partials/pg-design-comp";
+@import "partials/pg-past-work";

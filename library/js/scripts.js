@@ -244,6 +244,34 @@ jQuery(document).ready(function($) {
 
 
 
+	// ===== PAST DESIGN WORK
+	// ================================================================================
+
+	var pastDesignWork = {
+		settings: {
+			required_element: $('.pg-past-work-archive'),
+			fancybox: {
+				instance: {},
+				trigger: $('.grid-item .thumbnail'),
+				opts: {}
+			}
+		},
+		init: function() {
+			if(globalHelper.elementExists(this.settings.required_element)) {
+				this.bindUIActions();
+				this.fancyboxInit();
+			}
+		},
+		bindUIActions: function() { },
+
+		fancyboxInit: function() {
+			this.settings.fancybox.instance = this.settings.fancybox.trigger.fancybox(this.settings.fancybox.opts);
+		}
+	};
+	pastDesignWork.init();
+
+
+
 	// ===== WINDOW ONLOAD
 	// ================================================================================
 

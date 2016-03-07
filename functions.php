@@ -9,6 +9,7 @@ require_once('library/theme-includes/admin.php');
 require_once('library/theme-includes/functions.php');
 require_once('library/custom-post-type/design-project.php');
 require_once('library/custom-post-type/employee.php');
+require_once('library/custom-post-type/past-design-work.php');
 
 
 

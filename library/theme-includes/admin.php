@@ -30,7 +30,7 @@ add_action( 'wp_dashboard_setup', 'disable_default_dashboard_widgets' );
 
 // Include Login CSS
 function bones_login_css() {
-	wp_enqueue_style('bones_login_css', get_template_directory_uri().'/library/css/login.css', false);
+	// wp_enqueue_style('bones_login_css', get_template_directory_uri().'/library/css/login.css', false);
 }
 
 // Change the logo link to point to your site
