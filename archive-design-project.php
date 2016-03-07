@@ -5,7 +5,7 @@
 	<div class="page-wrapper">
 
 		<?php // Security Clearance Required ?>
-		<?php if(is_user_logged_in()) { ?>
+		<?php if(is_valid_administrator()) { ?>
 
 			<?php
 			// Modify the query for posts so that projects are retrieved alphabetically

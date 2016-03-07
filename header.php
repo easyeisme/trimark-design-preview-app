@@ -117,7 +117,10 @@ if($pg == 'front page') {
 
 					<?php // Controls ?>
 					<a class="header-btn header-btn-back header-btn-back2project" href="../"><i class="fa fa-chevron-left"></i> <span class="label">Return to<br/>Project</span></a>
+					<?php
+					/* ***** TEMPORARILY DISABLED *****
 					<div class="header-btn header-btn-comp-grid closed"><i class="i-trigger fa fa-th"></i></div>
+					*/ ?>
 					<a class="header-btn header-btn-download" href="<?=$comp_info['download-url']?>" download target="_blank"><i class="i-trigger fa fa-download"></i></a>
 
 					<?php // Comp Information ?>
@@ -136,6 +139,8 @@ if($pg == 'front page') {
 
 		<?php // Project Comp Sets ?>
 		<?php if($pg == 'design comp') { ?>
+			<?php
+			/* ***** TEMPORARILY DISABLED *****
 			<div class="header-project-comp-grid">
 				<div class="page-wrapper">
 					<ul class="clearfix">
@@ -155,5 +160,6 @@ if($pg == 'front page') {
 					<div class="header-project-comp-grid-ctrl ctrl-next"><i class="fa fa-arrow-circle-o-right"></i></div>
 				</div><!-- .page-wrapper -->
 			</div><!-- .header-project-comp-grid -->
+			*/ ?>
 		<?php } ?>
 	</header><!-- .header-main -->

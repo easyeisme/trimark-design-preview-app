@@ -1,4 +1,4 @@
-/* line 10, ../sass/login.scss */
+/* line 8, ../sass/login.scss */
 *,
 *:before,
 *:after {
@@ -19,8 +19,8 @@ html {
 
 /* line 23, ../sass/login.scss */
 body.login {
-  background: #eeeeee url("../img/bg-pattern-knit.png") 0 0 repeat;
-  color: #51504c;
+  background: #EEEEEE url("../img/bg-pattern-knit.png") 0 0 repeat;
+  color: #51504C;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding-top: 1px;
 }
@@ -37,7 +37,7 @@ body.login {
 }
 /* line 44, ../sass/login.scss */
 #login:before {
-  border: dashed #eeeff3 1px;
+  border: dashed #EEEFF3 1px;
   border-radius: 9px;
   bottom: 4px;
   content: " ";
@@ -68,14 +68,14 @@ body.login {
 }
 /* line 77, ../sass/login.scss */
 .login .message {
-  border: solid #eeeff3 1px;
+  border: solid #EEEFF3 1px;
   border-left: solid #7AD03A 4px;
   box-shadow: none;
   margin: 25px 25px 0 25px;
 }
 /* line 83, ../sass/login.scss */
 .login #login_error {
-  border: solid #eeeff3 1px;
+  border: solid #EEEFF3 1px;
   border-left: solid #DD3D36 4px;
   box-shadow: none;
   margin: 25px 25px 0 25px;
