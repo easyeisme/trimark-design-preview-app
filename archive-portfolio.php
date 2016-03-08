@@ -22,6 +22,7 @@
 							<?php
 							// Data Collection
 							$data = array();
+							$data['id'] = get_the_ID();
 							$data['title'] = $p['portfolio_title'];
 							$data['img'] = $p['portfolio_image']['url'];
 							$data['thumb'] = !empty($p['portfolio_thumb']) ? $p['portfolio_thumb'] : $p['portfolio_image']['sizes']['portfolio-thumb'];
@@ -29,10 +30,10 @@
 							if(!empty($data['author'])) {
 								$data['author'] = $data['author']->post_title;
 							}
-							// echo '<pre>'.print_r($data,true).'</pre>';
+							//echo '<pre>'.print_r($data,true).'</pre>';
 							?>
 							<div class="grid-item">
-								<a class="thumbnail" rel="gallery" href="<?=$data['img']?>"><img src="<?=$data['thumb']?>" /></a>
+								<a class="thumbnail" rel="gallery<?=$data['id']?>" href="<?=$data['img']?>"><img src="<?=$data['thumb']?>" /></a>
 								<div class="meta">
 									<div class="title"><?=$data['title']?></div>
 									<div class="byline">By: <?=$data['author']?></div>
